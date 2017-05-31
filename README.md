@@ -1,2 +1,3 @@
-# travelling_pineapples
+# Travelling Salesperson Problem
+
 Final Project

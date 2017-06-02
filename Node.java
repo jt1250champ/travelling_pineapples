@@ -26,7 +26,6 @@ public class Node {
     /*
     public void draw() {
     }
-
     public void drawTo(Node b) {
     }
     */

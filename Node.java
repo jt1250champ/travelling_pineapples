@@ -41,6 +41,10 @@ public class Node {
     public void setPassed(boolean p){
 	passed = p;
     }
+
+    public void getPassed(){
+	return passed;
+    }
     
     /*
     public static void main(String[] args) {

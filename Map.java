@@ -35,6 +35,10 @@ public class Map {
     public ArrayList<Node> getPoints() {
 	return setOfPoints;
     }
+
+    public double getDiagonalSize(){
+	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
+    }
     /*
     public static void main(String[] args) {
 	Map a = new Map("2applsdfsdfsdfsdfes.txt");

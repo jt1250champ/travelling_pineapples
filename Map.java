@@ -2,18 +2,18 @@ import java.io.*;
 import java.util.*;
 
 public class Map {
-    public ArrayList<Node> setOfPoints;
+    private ArrayList<Node> setOfPoints;
     private double sizeX;
     private double sizeY;
 
     public Map(String filename){
+	setOfPoints = new ArrayList<Node>();
 	try{
 	    File file = new File(filename);
 	    Scanner scan = new Scanner(file);
 	    sizeX = scan.nextDouble();
 	    sizeY = scan.nextDouble();
 	    double x, y;
-	    setOfPoints = new ArrayList<Node>();
 	    while(scan.hasNextDouble()){
 		x = scan.nextDouble();
 		y = scan.nextDouble();
@@ -39,10 +39,13 @@ public class Map {
     public double getDiagonalSize(){
 	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
     }
+    
     /*
     public static void main(String[] args) {
 	Map a = new Map("2applsdfsdfsdfsdfes.txt");
 	System.out.println(a.getPoints());
     }
     */
+	//stuff
+    }
 }

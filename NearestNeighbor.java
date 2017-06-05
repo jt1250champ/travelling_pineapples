@@ -1,12 +1,14 @@
 public class NearestNeighbor implements Solver {
     private Map map;
     private LinkedList<Node> solution;
+    private double dist;
     private Node firstNode;
 
     public NearestNeighbor(Map file){
 	map = file;
 	solution = new LinkedList<Node>();
 	firstNode = map.getPoints().get(0);
+	dist = 0;
     }
     
     public void solve(){
@@ -18,7 +20,11 @@ public class NearestNeighbor implements Solver {
 	pine.setPassed(true);
 	if (someNodesNotPassed){
 	    Node next = findNearestTo(pine);
+	    totalDist += pine.distanceTo(next);
 	    solve(next);
+	}
+	else{
+	    totalDist += pine.distTo(firstNode);
 	}
     }
 
@@ -36,5 +42,20 @@ public class NearestNeighbor implements Solver {
 	    }
 	}
 	return closest;
+    }
+    
+
+    public static void main(String[]args){
+	Map apple2 = new Map("2apples.txt");
+	Map apple10 = new Map("10apples.txt");
+
+	NearestNeighbor solve2 = new NearestNeighbor(apple2);
+	NearestNeighbor solve10 = new NearestNeighbor(apple10);
+
+	solve2.solve();
+	solve10.solve();
+
+	System.out.println(sovle2.getDist());
+	System.out.println(sovle10.getDist());
     }
 }

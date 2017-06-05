@@ -18,7 +18,7 @@ public class NearestNeighbor implements Solver {
     public void solve(Node pine){
 	solution.add(pine);
 	pine.setPassed(true);
-	if (someNodesNotPassed){
+	if (someNodesNotPassed()){
 	    Node next = findNearestTo(pine);
 	    totalDist += pine.distanceTo(next);
 	    solve(next);
@@ -43,7 +43,15 @@ public class NearestNeighbor implements Solver {
 	}
 	return closest;
     }
-    
+
+    public boolean someNodesNotPassed(){
+	for (int i = 0; i < map.getPoints().size(); i ++){
+	    if (!map.getPoints().get(i).getPassed()){
+		return true;
+	    }
+	}
+	return false;
+    }
 
     public static void main(String[]args){
 	Map apple2 = new Map("2apples.txt");

@@ -42,7 +42,7 @@ public class Node {
 	passed = p;
     }
 
-    public void getPassed(){
+    public boolean getPassed(){
 	return passed;
     }
     

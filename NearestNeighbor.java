@@ -1,12 +1,14 @@
+import java.util.*;
+
 public class NearestNeighbor implements Solver {
     private Map map;
-    private LinkedList<Node> solution;
+    private ArrayList<Node> solution;
     private double dist;
     private Node firstNode;
 
     public NearestNeighbor(Map file){
 	map = file;
-	solution = new LinkedList<Node>();
+	solution = new ArrayList<Node>();
 	firstNode = map.getPoints().get(0);
 	dist = 0;
     }
@@ -20,18 +22,18 @@ public class NearestNeighbor implements Solver {
 	pine.setPassed(true);
 	if (someNodesNotPassed()){
 	    Node next = findNearestTo(pine);
-	    totalDist += pine.distanceTo(next);
+	    dist += pine.distanceTo(next);
 	    solve(next);
 	}
 	else{
-	    totalDist += pine.distTo(firstNode);
+	    dist += pine.distanceTo(firstNode);
 	}
     }
 
     public Node findNearestTo(Node apple){
 	double leastDist = map.getDiagonalSize();
 	Node closest = apple;
-	ArrayList<Node> setOfNodes = map.getPoinst();
+	ArrayList<Node> setOfNodes = map.getPoints();
 	for (int i = 0; i < setOfNodes.size(); i ++){
 	    if (setOfNodes.get(i) != apple){
 		double dist = apple.distanceTo(setOfNodes.get(i));
@@ -53,6 +55,10 @@ public class NearestNeighbor implements Solver {
 	return false;
     }
 
+    public double getDist(){
+	return dist;
+    }
+
     public static void main(String[]args){
 	Map apple2 = new Map("2apples.txt");
 	Map apple10 = new Map("10apples.txt");
@@ -63,7 +69,7 @@ public class NearestNeighbor implements Solver {
 	solve2.solve();
 	solve10.solve();
 
-	System.out.println(sovle2.getDist());
-	System.out.println(sovle10.getDist());
+	System.out.println(solve2.getDist());
+	System.out.println(solve10.getDist());
     }
 }

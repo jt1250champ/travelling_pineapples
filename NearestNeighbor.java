@@ -24,7 +24,6 @@ public class NearestNeighbor implements Solver {
 	    pine.setPassed(true);
 	    next = findNearestTo(pine);
 	    dist += pine.distanceTo(next);
-	    System.out.println(dist);
 	    pine = next;
 	}
 	dist += pine.distanceTo(firstNode);
@@ -35,7 +34,7 @@ public class NearestNeighbor implements Solver {
 	Node closest = apple;
 	ArrayList<Node> setOfNodes = map.getPoints();
 	for (int i = 0; i < setOfNodes.size(); i ++){
-	    if (setOfNodes.get(i) != apple){
+	    if (setOfNodes.get(i) != apple && !setOfNodes.get(i).getPassed()){
 		double dist = apple.distanceTo(setOfNodes.get(i));
 		if (dist < leastDist){
 		    leastDist = dist;
@@ -49,7 +48,6 @@ public class NearestNeighbor implements Solver {
     public boolean someNodesNotPassed(){
 	for (int i = 0; i < map.getPoints().size(); i ++){
 	    if (!map.getPoints().get(i).getPassed()){
-		System.out.println(map.getPoints().get(i));
 		return true;
 	    }
 	}
@@ -68,9 +66,9 @@ public class NearestNeighbor implements Solver {
 	NearestNeighbor solve10 = new NearestNeighbor(apple10);
 
 	solve2.solve();
-	//solve10.solve();
+	solve10.solve();
 
 	System.out.println(solve2.getDist());
-	//System.out.println(solve10.getDist());
+	System.out.println(solve10.getDist());
     }
 }

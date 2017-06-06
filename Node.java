@@ -5,11 +5,13 @@ public class Node {
     private double x;
     private double y;
     private Node next;
+    private boolean passed;
 
     public Node(double w, double h) {
 	this.x = w;
 	this.y = h;
 	this.next = null;
+	passed = false;
     }
 
     public String toString() {
@@ -35,6 +37,15 @@ public class Node {
 	double dy = this.y - b.getY();
 	return Math.sqrt(dx*dx + dy*dy); 
     }
+
+    public void setPassed(boolean p){
+	passed = p;
+    }
+
+    public boolean getPassed(){
+	return passed;
+    }
+    
     /*
     public static void main(String[] args) {
 	Node a = new Node(0, 0);

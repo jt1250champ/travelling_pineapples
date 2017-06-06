@@ -5,9 +5,13 @@ import java.awt.geom.*;
 public class Edge {
     private Line2D line;
     private double length;
+	public Node pine;
+	public Node apple;
 
     public Edge(Node pine, Node apple) {
 	this.length = pine.distanceTo(apple);
+	    this.pine = pine;
+	    this.apple = apple;
 	this.line = new Line2D.Double(pine.getX(), pine.getY(), apple.getX(), apple.getY());
     }
 
@@ -25,6 +29,7 @@ public class Edge {
 public double getLength() {
 	return length;
 }
+	
     /*
     public static void main(String[] args) {
 	Node a = new Node(5, 9);

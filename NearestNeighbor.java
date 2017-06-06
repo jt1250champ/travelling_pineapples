@@ -54,6 +54,7 @@ public class NearestNeighbor implements Solver {
 	return false;
     }
 
+    /*
     public double getDist(){
 	return dist;
     }
@@ -70,5 +71,5 @@ public class NearestNeighbor implements Solver {
 
 	System.out.println(solve2.getDist());
 	System.out.println(solve10.getDist());
-    }
+	}*/
 }

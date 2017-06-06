@@ -5,6 +5,7 @@ JT Tao and Masha Zorin
 
 ##Features
 ##Bugs
+- reminder to change implement to extend
 ##Development Log
 - JT and Masha created all of the files needed
 - JT and Masha has worked on the background classes of Edge, Node and Map as well as the abstract class Solver

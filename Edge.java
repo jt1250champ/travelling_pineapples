@@ -21,6 +21,10 @@ public class Edge {
 	}
 	return false;
     }
+	
+public double getLength() {
+	return length;
+}
     /*
     public static void main(String[] args) {
 	Node a = new Node(5, 9);

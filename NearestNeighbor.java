@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class NearestNeighbor implements Solver {
+public class NearestNeighbor extends Solver {
     private Map map;
     private ArrayList<Node> solution;
     private double dist;

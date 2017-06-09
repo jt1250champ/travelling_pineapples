@@ -1,0 +1,2 @@
+class NearestInsertion implements Solver {
+}

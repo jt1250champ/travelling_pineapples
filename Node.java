@@ -38,6 +38,27 @@ public class Node {
 	return Math.sqrt(dx*dx + dy*dy); 
     }
 
+    public double distToEdge(Edge e){
+	Vector edge = new Vector(e);
+	Node node;
+	if (distanceTo(e.pine) < distanceTo(e.apple)){
+	    node = e.pine;
+	}
+	else{
+	    node = e.apple;
+	}
+	Vector v = new Vector(this, node);
+	double perpDist = edge.getNormal().dot(v);
+	Vector toPerp = edge.minus(edge.getNormal().scale(perpDist));
+	//figure out if perpendicular is on edge or outside
+	if (edge.add(toPerp).getMagnitude() > edge.getMagnitude()){
+	    return v.getMagnitude();
+	}
+	else{
+	    return perpDist;
+	}
+    }
+
     public void setPassed(boolean p){
 	passed = p;
     }

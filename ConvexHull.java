@@ -32,13 +32,43 @@ public class ConvexHull extends Solver {
     }
 
     public void insert(Node pine){
-	
+	int nodeIndex;
+	double leastDist = map.getDiagonalSize();
+	Edge edge;
+	for (int i = 0; i < solution.size(); i ++){
+	    edge = new Edge(solution.get(i), solution.get((i + 1) % solution.size()));
+	    if (pine.distToEdge(edge) < leastDist){
+		leastDist = pine.distToEdge(edge);
+		nodeIndex = i;
+	    }
+	}
+	solution.add(i, pine);
     }
 
     public boolean areMoreOuterNodes(){
     }
 
     public Node findNodeNearestToPolygon(){
+	Node node;
+	Node answer = new Node(0,0);
+	double leastDist = map.getDiagonalSize();
+	for (int i = 0; i < map.getPoints().size(); i ++){
+	    if (!map.getPoints().get(i).getPassed()){
+		node = map.getPoints().get(i);
+		answer = node;
+		Edge edge;
+		double dist;
+		for (int i = 0; i < solution.size() - 1; i ++){
+		    edge = new Edge(solution.get(i), solution.get(i + 1));
+		    dist = node.distToEdge(edge); //write this in node
+		    if (dist < leastDist){
+			leastDist = dist;
+			answer = node;
+		    }
+		}
+	    }
+	}
+	return answer;
     }
     
 }

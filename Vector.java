@@ -13,7 +13,7 @@ public class Vector{
     }
 
     public Vector(Edge edge){
-	this(edge.pine, edge.apple);
+	this(edge.getPine(), edge.getApple());
     }
 
     public Vector(double dir, double mag){

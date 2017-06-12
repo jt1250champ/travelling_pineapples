@@ -41,11 +41,11 @@ public class Node {
     public double distToEdge(Edge e){
 	Vector edge = new Vector(e);
 	Node node;
-	if (distanceTo(e.pine) < distanceTo(e.apple)){
-	    node = e.pine;
+	if (distanceTo(e.getPine()) < distanceTo(e.getApple())){
+	    node = e.getPine();
 	}
 	else{
-	    node = e.apple;
+	    node = e.getApple();
 	}
 	Vector v = new Vector(this, node);
 	double perpDist = edge.getNormal().dot(v);

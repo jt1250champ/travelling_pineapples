@@ -1,19 +1,27 @@
 public class Driver {
     public static void main(String[] args) {
 	Map map1 = new Map("USA.txt");
+	Map map2 = new Map("10apples.txt");
 	
-	Solver solver;
+	Solver solver1;
+	Solver solver2;
 	if (args[0].equals("0")){
-	    solver = new NearestNeighbor(map1);
+	    solver1 = new NearestNeighbor(map1);
+	    solver2 = new NearestNeighbor(map2);
 	}
 	//else if (args[0].equals("1")){
-	//   solver = new SmallestIncrease(map1);
+	//   solver1 = new SmallestIncrease(map1);
+	//solver2 = new SmallestIncrease(map2);
 	//}
 	else{
-	    solver = new ConvexHull(map1);
+	    solver1 = new ConvexHull(map1);
+	    solver2 = new ConvexHull(map2);
 	}
 
-	solver.solve();
-	System.out.println(solver.getDist());
+	solver1.solve();
+	solver2.solve();
+	
+	System.out.println(solver1.getDist());
+	System.out.println(solver2.getDist());
     }
 }

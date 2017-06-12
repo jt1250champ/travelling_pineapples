@@ -26,8 +26,9 @@ public class Edge {
 	return false;
     }
 	
-public double getLength() {
+ public double getLength() {
 	return length;
+
 }
 	public Node getPine() {
 	return pine;

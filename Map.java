@@ -39,6 +39,7 @@ public class Map {
     public double getDiagonalSize(){
 	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
     }
+
 	public double getSizeX() {
 		return sizeX;
 	}

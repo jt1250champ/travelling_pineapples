@@ -7,7 +7,7 @@ public class Driver {
 	Map map1 = new Map("USA.txt");
 	Map map2 = new Map("10apples.txt");
 
-	map1.setVisible(true);
+	map1.setVisible(false);
 	map2.setVisible(true);
 
 	Solver solver1;

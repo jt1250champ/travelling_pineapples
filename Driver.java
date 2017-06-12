@@ -1,4 +1,9 @@
+import java.io.*;
+import java.util.*;
 import java.awt.*;
+import java.awt.geom.*;
+import java.awt.Graphics2D.*;
+import javax.swing.*;
 
 public class Driver {
 
@@ -14,7 +19,9 @@ public class Driver {
 	Solver solver2;
 	if (args[0].equals("0")){
 	    solver1 = new NearestNeighbor(map1);
+	    solver1.setVisible(true);
 	    solver2 = new NearestNeighbor(map2);
+	    solver2.setVisible(true);
 	}
 	//else if (args[0].equals("1")){
 	//   solver1 = new SmallestIncrease(map1);
@@ -22,7 +29,9 @@ public class Driver {
 	//}
 	else{
 	    solver1 = new ConvexHull(map1);
+	    	    solver1.setVisible(true);
 	    solver2 = new ConvexHull(map2);
+	    	    solver2.setVisible(true);
 	}
 
 	solver1.solve();

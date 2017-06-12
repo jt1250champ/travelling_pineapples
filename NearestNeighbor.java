@@ -65,8 +65,12 @@ public class NearestNeighbor extends Solver {
 	return dist;
     }
 
+    public ArrayList<Node> getSolution() {
+	return solution;
+    }
 
-    
+
+    /*
     public static void main(String[]args){
 	//Map apple2 = new Map("2apples.txt");
 	Map apple10 = new Map("10apples.txt");
@@ -81,22 +85,26 @@ public class NearestNeighbor extends Solver {
 	System.out.println(solve10.getDist());
 	//System.out.println(solve10.getDist());
     }
-    
+    */
 
-    /*
+
     public static void main(String[]args){
-	Map apple2 = new Map("2apples.txt");
-	Map apple1000 = new Map("1000apples.txt");
+	Map a = new Map("10apples.txt");
+	//Map apple1000 = new Map("1000apples.txt");
+		a.setVisible(true);
+		//apple1000.setVisible(true);
 
-	NearestNeighbor solve2 = new NearestNeighbor(apple2);
-	NearestNeighbor solve1000 = new NearestNeighbor(apple1000);
+	NearestNeighbor solve2 = new NearestNeighbor(a);
+	//NearestNeighbor solve1000 = new NearestNeighbor(apple1000);
+	//solve2.setVisible(true);
 
 	solve2.solve();
-	solve1000.solve();
+	//solve1000.solve();
 
 	System.out.println(solve2.getDist());
-	System.out.println(solve1000.getDist());
-	}
-    */
+	//System.out.println(solve1000.getDist());
+	solve2.getSolution();
+    }
+
 
 }

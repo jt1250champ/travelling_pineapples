@@ -5,7 +5,7 @@ import java.awt.geom.*;
 import java.awt.Graphics2D.*;
 import javax.swing.*;
 
-public abstract class Solver {
+public abstract class Solver extends Frame{
     private Map map;
     private ArrayList<Node> solution;
     private double dist;
@@ -15,14 +15,18 @@ public abstract class Solver {
     public double getDist() {
 	return dist;
     }
-
+    /*
     public void paint(Graphics g) {
+
 	Graphics2D g2 = (Graphics2D) g;
 	for(int i = 0; i < solution.size() - 1; i++) {
 	    g2.drawLine((int)solution.get(i).getX(), (int)solution.get(i).getY(), (int)solution.get(i+1).getX(), (int)solution.get(i+1).getY());
 	}
+  
 	
-    }
+	
+	}
+    */
 
     
     public String toString() {

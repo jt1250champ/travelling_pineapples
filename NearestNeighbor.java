@@ -1,6 +1,11 @@
+import java.io.*;
 import java.util.*;
+import java.awt.*;
+import java.awt.geom.*;
+import java.awt.Graphics2D.*;
+import javax.swing.*;
 
-public class NearestNeighbor implements Solver {
+public class NearestNeighbor extends Solver {
     private Map map;
     private ArrayList<Node> solution;
     private double dist;
@@ -60,17 +65,20 @@ public class NearestNeighbor implements Solver {
 	return dist;
     }
 
+    
     public static void main(String[]args){
-	Map apple2 = new Map("2apples.txt");
+	//Map apple2 = new Map("2apples.txt");
 	Map apple10 = new Map("10apples.txt");
-
-	NearestNeighbor solve2 = new NearestNeighbor(apple2);
+	//apple2.setVisible(true);
+	apple10.setVisible(true);
+	//NearestNeighbor solve2 = new NearestNeighbor(apple2);
 	NearestNeighbor solve10 = new NearestNeighbor(apple10);
 
-	solve2.solve();
+	solve10.solve();
 	//solve10.solve();
 
-	System.out.println(solve2.getDist());
+	System.out.println(solve10.getDist());
 	//System.out.println(solve10.getDist());
     }
+    
 }

@@ -9,6 +9,7 @@ JT Tao and Masha Zorin
   - SmallestIncrease: adds shortest edges to the path first
   - ConvexHull: creates a convex polygon and then adds the node closest to polygon in the best possible way
 ##Bugs
+
 -ConvexHull probably works wrong - with given time, because testing was difficult, we couldn't figure out why. It does give a path however. It also might be that
 ##Development Log
 - JT and Masha created all of the files needed

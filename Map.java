@@ -55,6 +55,7 @@ public class Map extends Frame{
 	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
     }
 
+
     public double getSizeX(){
 	return sizeX;
     }
@@ -62,7 +63,6 @@ public class Map extends Frame{
     public double getSizeY(){
 	return sizeY;
     }
-
     public void paint(Graphics g) {
 	Graphics2D g2 = (Graphics2D) g;
 	for(int i = 0; i < xs.size(); i++) {
@@ -73,6 +73,8 @@ public class Map extends Frame{
 	    g2.drawString(".", x, y);
 	}
     }
+
+
     
     /*
     public static void main(String[] args) {

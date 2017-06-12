@@ -40,13 +40,13 @@ public class Map {
 	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
     }
 
-    public double getSizeX(){
-	return sizeX;
-    }
-
-    public double getSizeY(){
-	return sizeY;
-    }
+	public double getSizeX() {
+		return sizeX;
+	}
+	
+	public double getSizeY() {
+		return sizeY;
+	}
     
     /*
     public static void main(String[] args) {

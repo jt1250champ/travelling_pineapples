@@ -26,10 +26,16 @@ public class Edge {
 	return false;
     }
 	
-    public double getLength() {
+ public double getLength() {
 	return length;
-    }
-	
+
+}
+	public Node getPine() {
+	return pine;
+}
+	public Node getApple() {
+	return apple;
+}
     /*
     public static void main(String[] args) {
 	Node a = new Node(5, 9);

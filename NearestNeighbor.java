@@ -29,10 +29,10 @@ public class NearestNeighbor extends Solver {
 	    pine.setPassed(true);
 	    next = findNearestTo(pine);
 	    dist += pine.distanceTo(next);
-	    System.out.println(dist);
 	    pine = next;
 	}
 	dist += pine.distanceTo(firstNode);
+	//System.out.println(solution);
     }
 
     public Node findNearestTo(Node apple){
@@ -40,7 +40,7 @@ public class NearestNeighbor extends Solver {
 	Node closest = apple;
 	ArrayList<Node> setOfNodes = map.getPoints();
 	for (int i = 0; i < setOfNodes.size(); i ++){
-	    if (setOfNodes.get(i) != apple){
+	    if (setOfNodes.get(i) != apple && !setOfNodes.get(i).getPassed()){
 		double dist = apple.distanceTo(setOfNodes.get(i));
 		if (dist < leastDist){
 		    leastDist = dist;
@@ -54,16 +54,17 @@ public class NearestNeighbor extends Solver {
     public boolean someNodesNotPassed(){
 	for (int i = 0; i < map.getPoints().size(); i ++){
 	    if (!map.getPoints().get(i).getPassed()){
-		System.out.println(map.getPoints().get(i));
 		return true;
 	    }
 	}
 	return false;
     }
 
+    
     public double getDist(){
 	return dist;
     }
+
 
     
     public static void main(String[]args){
@@ -81,4 +82,21 @@ public class NearestNeighbor extends Solver {
 	//System.out.println(solve10.getDist());
     }
     
+
+    /*
+    public static void main(String[]args){
+	Map apple2 = new Map("2apples.txt");
+	Map apple1000 = new Map("1000apples.txt");
+
+	NearestNeighbor solve2 = new NearestNeighbor(apple2);
+	NearestNeighbor solve1000 = new NearestNeighbor(apple1000);
+
+	solve2.solve();
+	solve1000.solve();
+
+	System.out.println(solve2.getDist());
+	System.out.println(solve1000.getDist());
+	}
+    */
+
 }

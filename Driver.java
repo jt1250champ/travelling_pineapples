@@ -6,8 +6,10 @@ public class Driver {
     public static void main(String[] args) {
 	Map map1 = new Map("USA.txt");
 	Map map2 = new Map("10apples.txt");
+
 	map1.setVisible(true);
 	map2.setVisible(true);
+
 	Solver solver1;
 	Solver solver2;
 	if (args[0].equals("0")){

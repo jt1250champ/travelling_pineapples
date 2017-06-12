@@ -64,14 +64,13 @@ public class Map extends Frame{
 	    int y = (int)b;
 	    g2.drawString(".", x, y);
 	}
-	g2.drawLine(30, 40, 80, 60);
     }
     
-    
+    /*
     public static void main(String[] args) {
 	Map a = new Map("10apples.txt");
 	a.setVisible(true);
        }
-    
+    */
 
 }

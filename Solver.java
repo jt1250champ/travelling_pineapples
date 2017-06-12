@@ -1,5 +1,5 @@
 import java.util.*;
-abstract class Solver {
+public abstract class Solver {
     private Map map;
     private LinkedList<Node> solution;
     private double dist;

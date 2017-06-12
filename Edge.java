@@ -2,7 +2,7 @@ import java.util.*;
 import java.awt.*;
 import java.awt.geom.*;
 
-class Edge {
+public class Edge {
     private Line2D line;
     private double length;
 

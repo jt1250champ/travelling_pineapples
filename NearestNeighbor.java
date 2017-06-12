@@ -27,6 +27,7 @@ public class NearestNeighbor extends Solver {
 	    pine = next;
 	}
 	dist += pine.distanceTo(firstNode);
+	//System.out.println(solution);
     }
 
     public Node findNearestTo(Node apple){
@@ -54,22 +55,23 @@ public class NearestNeighbor extends Solver {
 	return false;
     }
 
-    /*
+    
     public double getDist(){
 	return dist;
     }
-
+    /*
     public static void main(String[]args){
 	Map apple2 = new Map("2apples.txt");
-	Map apple10 = new Map("10apples.txt");
+	Map apple1000 = new Map("1000apples.txt");
 
 	NearestNeighbor solve2 = new NearestNeighbor(apple2);
-	NearestNeighbor solve10 = new NearestNeighbor(apple10);
+	NearestNeighbor solve1000 = new NearestNeighbor(apple1000);
 
 	solve2.solve();
-	solve10.solve();
+	solve1000.solve();
 
 	System.out.println(solve2.getDist());
-	System.out.println(solve10.getDist());
-	}*/
+	System.out.println(solve1000.getDist());
+	}
+    */
 }

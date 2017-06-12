@@ -13,7 +13,7 @@ public abstract class Solver {
     
     public String toString() {
 	String nodes = "";
-	for (i = 0; i < solution.size(); i ++){
+	for (int i = 0; i < solution.size(); i ++){
 	    nodes += solution.get(i) + "\n";
 	}
 	return "Dist: " + dist + "\n" + "The path taken is: \n" + nodes;

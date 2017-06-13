@@ -54,18 +54,17 @@ public class Map extends Frame{
     public double getDiagonalSize(){
 	return Math.sqrt(sizeX * sizeX + sizeY * sizeY);
     }
-    
+    /*
     public void paint(Graphics g) {
-	Graphics2D g2 = (Graphics2D) g;
 	for(int i = 0; i < xs.size(); i++) {
 	    double a = xs.get(i);
 	    double b = ys.get(i);
 	    int x = (int)a;
 	    int y = (int)b;
-	    g2.drawString(".", x, y);
+	    g.drawString(".", x, y);
 	}
     }
-    
+    */
 
     public double getSizeX(){
 	return sizeX;
@@ -74,7 +73,14 @@ public class Map extends Frame{
     public double getSizeY(){
 	return sizeY;
     }
-    
+
+    public ArrayList<Double> getXs() {
+	return xs;
+    }
+
+    public ArrayList<Double> getYs() {
+	return ys;
+    }
     
     public static void main(String[] args) {
 	Map a = new Map("10apples.txt");

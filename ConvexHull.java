@@ -1,10 +1,21 @@
+import java.io.*;
 import java.util.*;
+import java.awt.*;
+import java.awt.geom.*;
+import java.awt.Graphics2D.*;
+import javax.swing.*;
 public class ConvexHull extends Solver {
     private Map map;
     private ArrayList<Node> solution;
+     private ArrayList<Double> xs;
+    private ArrayList<Double> ys;
     private double dist;
     
     public ConvexHull(Map file){
+			setSize((int)file.getSizeX(), (int)file.getSizeY());
+	xs = file.getXs();
+	ys = file.getYs();
+
 	map = file;
 	solution = new ArrayList<Node>();
 	dist = 0;
@@ -162,6 +173,22 @@ public class ConvexHull extends Solver {
 	    //System.out.println(dist);
 	}
     }
+public void paint(Graphics g) {
+	for(int i = 0; i < xs.size(); i++) {
+	    double a = xs.get(i);
+	    double b = ys.get(i);
+	    int x = (int)a;
+	    int y = (int)b;
+	    g.drawString(".", x, y);
+	}
+
+	for(int i = 0; i < solution.size() - 1; i++) {
+	    g.drawLine((int)solution.get(i).getX(), (int)solution.get(i).getY(), (int)solution.get(i+1).getX(), (int)solution.get(i+1).getY());
+	}
+	g.drawLine((int)solution.get(solution.size()-1).getX(),(int)solution.get(solution.size()-1).getY(), (int)solution.get(0).getX(), (int)solution.get(0).getY());
+	
+    }
+
 
     //no idea why i need to do this, it should come from solver :(
     public double getDist(){
